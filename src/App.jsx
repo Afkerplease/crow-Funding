@@ -1,12 +1,20 @@
 import Header from "./Components/Header";
+import { useState } from "react";
 import Mlogo from "./images/logo-mastercraft.svg";
 import bookMark from "./images/icon-bookmark.svg";
 import { motion } from "framer-motion";
+import BackProject from "./Components/BackProject";
 
 export default function App() {
+  const [isclicked, setIsclicked] = useState(false);
+
+  const clickHandler = () => {
+    setIsclicked(!isclicked);
+  };
   return (
     <main className="relative  font-Comissionaire  ">
       <Header />
+      {isclicked && <BackProject click={clickHandler} />}
       <motion.div
         initial={{ opacity: 0, x: 150 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -26,7 +34,10 @@ export default function App() {
           A beautiful & handcrafted monitor stand to reduce neck and eye strain.
         </p>
         <div className=" lg:px-20 flex justify-center lg:justify-between  items-center w-[100%] gap-4 lg:mt-8 ">
-          <button className=" bg-Moderatecyan text-white lg:w-[30%]   w-[70%] py-4 rounded-full ">
+          <button
+            onClick={clickHandler}
+            className=" bg-Moderatecyan hover:bg-Darkcyan text-white lg:w-[30%]   w-[70%] py-4 rounded-full "
+          >
             Back this project
           </button>
           <div className=" lg:flex  lg:w-[25%] lg:items-center lg:bg-gray-200 lg:rounded-full lg:gap-4 ">
@@ -34,7 +45,7 @@ export default function App() {
               {" "}
               <img src={bookMark} alt="" />{" "}
             </button>
-            <h3 className=" hidden lg:block text-Darkgray font-bold cursor-pointer ">
+            <h3 className=" hidden hover:text-Darkcyan lg:block text-Darkgray font-bold cursor-pointer ">
               Bookmark
             </h3>
           </div>
@@ -106,7 +117,7 @@ export default function App() {
               <span className=" text-4xl font-bold ">101</span>
               <p className=" text-Darkgray">left</p>
             </div>
-            <button className=" mt-6 bg-Moderatecyan lg:w-[30%] w-[55%] py-3 rounded-full text-white font-[700] ">
+            <button className=" mt-6 hover:bg-Darkcyan bg-Moderatecyan lg:w-[30%] w-[55%] py-3 rounded-full text-white font-[700] ">
               Select Reward
             </button>
           </div>
@@ -128,7 +139,7 @@ export default function App() {
               <span className=" text-4xl font-bold ">64</span>
               <p className=" text-Darkgray">left</p>
             </div>
-            <button className=" mt-6 bg-Moderatecyan lg:w-[30%] w-[55%] py-3 rounded-full text-white font-[700] ">
+            <button className=" hover:bg-Darkcyan mt-6 bg-Moderatecyan lg:w-[30%] w-[55%] py-3 rounded-full text-white font-[700] ">
               Select Reward
             </button>
           </div>
