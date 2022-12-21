@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../images/logo.svg";
 import hamburger from "../images/icon-hamburger.svg";
 import { motion } from "framer-motion";
-import closeMenu from "../images/icon-close-menu.svg";
 
 function NavBar() {
   return (
