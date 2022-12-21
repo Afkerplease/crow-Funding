@@ -33,7 +33,7 @@ export default function App() {
         <p className=" text-center text-Darkgray mt-4 text-[16px] lg:text-[18px] ">
           A beautiful & handcrafted monitor stand to reduce neck and eye strain.
         </p>
-        <div className=" lg:px-20 flex justify-center lg:justify-between  items-center w-[100%] gap-4 lg:mt-8 ">
+        <div className=" mt-4 lg:px-20 flex justify-center lg:justify-between  items-center w-[100%] gap-4 lg:mt-8 ">
           <button
             onClick={clickHandler}
             className=" bg-Moderatecyan hover:bg-Darkcyan text-white lg:w-[30%]   w-[70%] py-4 rounded-full "
